@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actualizar usuario</title>
+    <link rel="stylesheet" href="{{url_for('static', filename ='css/Style.css')}}">
+    <link rel="stylesheet" href="../static/css/Style.css">
+</head>
+<body>
+    <h1>Editar usuario</h1>
+    <form action="" method="POST">
+        <!-- Nombre del usuario -->
+        <label for="nombre_user">Nombre:</label>
+        <input type="text" id="nombre_user" name="nombre_user" value="{{usuarios[1]}}" required><br>
+    
+        <!-- Apellido del usuario -->
+        <label for="apellido_user">Apellido:</label>
+        <input type="text" id="apellido_user" name="apellido_user" value="{{usuarios[2]}}" required><br>
+    
+        <!-- Email del usuario -->
+        <label for="email_user">Email:</label>
+        <input type="email" id="email_user" name="email_user" value="{{usuarios[3]}}" required><br>
+    
+        <!-- Nombre de usuario -->
+        <label for="usuario_user">Usuario:</label>
+        <input type="text" id="usuario_user" name="usuario_user"value="{{usuarios[4]}}" required><br>
+    
+        <!-- Contraseña del usuario -->
+        <label for="contraseña_user">Contraseña:</label>
+        <input type="password" id="contraseña_user" name="contraseña_user" value="{{usuarios[5]}}" required><br>
+    
+        <!-- Rol del usuario -->
+        <label for="rol_user">Rol:</label>
+        <input type="text" id="rol_user" name="rol_user" value="{{usuarios[6]}}" required><br>
+    
+        <!-- ID del usuario (oculto) -->
+        <input type="hidden" id="id_user" name="id_user" value="{{ id_user }}"> <!-- Puedes obtener el valor de id_user desde tu backend y pasarlo al formulario -->
+    
+        <!-- Botón de envío -->
+        <button type="submit">Actualizar</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar usuario</title>
+    <link rel="stylesheet" href="{{url_for('static', filename ='css/Style.css')}}">
+    <link rel="stylesheet" href="../static/css/Style.css">
+</head>
+<body>
+    <ul class="button-list">
+        <li><a href="/registrouser">Registrar Usuario</a></li>
+        <li><a href="/registrot">Registrar Tarea</a></li>
+        <li><a href="/salir">Cerrar Sesión</a></li>
+    </ul>
+    <h1>Registro de Usuario</h1>
+
+    <form action="/registrouser" method="post">
+        <!-- Nombre -->
+        <div>
+            <label for="firstName">Nombre:</label>
+            <input type="text" id="firstName" name="nombre_user" required>
+        </div>
+
+        <!-- Apellido -->
+        <div>
+            <label for="lastName">Apellido:</label>
+            <input type="text" id="lastName" name="apellido_user" required>
+        </div>
+
+        <!-- Correo electrónico -->
+        <div>
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email_user" required>
+        </div>
+
+        <!-- Usuario -->
+        <div>
+            <label for="username">Usuario:</label>
+            <input type="text" id="username" name="usuario_user" required>
+        </div>
+
+        <!-- Contraseña -->
+        <div>
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="contraseña_user" required>
+        </div>
+
+        <!-- Rol -->
+        <div>
+            <label for="role">Rol:</label>
+            <select id="role" name="rol_user" required>
+                <option value="usuario">Usuario</option>
+                <option value="administrador">Administrador</option>
+            </select>
+        </div>
+
+        <!-- Botón de registro -->
+        <button type="submit">Registrar Usuario</button>
+    </form>
+</body>
+</html>

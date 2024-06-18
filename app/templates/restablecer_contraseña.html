@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restablecer contraseña</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Style.css') }}">
+</head>
+<body>
+    <h1>Restablecer Contraseña</h1>
+    <form method="post" action="">
+        <div class="formulario_r">
+            <label for="nueva_c">Nueva Contraseña</label>
+            <input type="password" id="nueva_c" name="nueva_c" required>
+        </div>
+        <div class="formulario_r">
+            <label for="confirmar_c">Confirmar Contraseña</label>
+            <input type="password" id="confirmar_c" name="confirmar_c" required>
+        </div>
+        <button type="submit" class="buton_send_email">Restablecer Contraseña</button>
+    </form>
+</body>
+</html>

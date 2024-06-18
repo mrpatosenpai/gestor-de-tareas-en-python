@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperar contraseña</title>
+    <link rel="stylesheet" href="{{url_for('static', filename ='css/Style.css')}}">
+</head>
+<body>
+    <h1>Restablecer Contraseña</h1>
+    <p>Ingrese la direccion del correo electronico y se le enviara un enlace para restablecer su contraseña</p>
+    <form method="post" action="">
+        <div class="formulario_r">
+            <label for="email_user">Correo electronico</label>
+            <input type="email" id="email_user" name="email_user" required>
+        </div>
+        <button type="submit" class="buton_send_email">Enviar correo</button>
+    </form>
+</body>
+</html>

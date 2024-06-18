@@ -1,0 +1,192 @@
+
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+
+        /* Contenedor del formulario */
+        form {
+            width: 50%;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Títulos */
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        /* Estilos de los campos */
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        input[type="password"],
+        input[type="email"],
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        /* Estilo del botón de envío */
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+         /* Botón de registro */
+         .register-button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 20px auto;
+            display: block;
+            width: 10%;
+            float: left;
+            text-decoration: none;
+        }
+
+        .register-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Enlace para "Olvidé mi contraseña" */
+        .forgot-link {
+            text-align: center;
+            display: block;
+            margin-top: 10px;
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .forgot-link:hover {
+            text-decoration: underline;
+        }
+
+        .buton_inicio{
+            margin-top: 10px;
+            display: inline-block;
+        }
+
+        .button-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+        
+        /* Estilos de cada botón */
+        .button-list li {
+            display: inline-block;
+            margin-right: 10px; /* Espacio entre botones */
+        }
+        
+        .button-list li a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4caf50;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        .button-list li a:hover {
+            background-color: #45a049;
+        }
+        /* Estilos de la tabla de usuarios registrados */
+.user-table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+
+.user-table th,
+.user-table td {
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.user-table th {
+    background-color: #f2f2f2;
+}
+
+.user-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.user-table tbody tr:hover {
+    background-color: #ddd;
+}
+#bienvenida {
+    font-size: 18px;
+    color: #333;
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.card-header {
+    background-color: #f0f0f0;
+    padding: 5px;
+    border-bottom: 1px solid #ccc;
+}
+
+.card-body {
+    padding: 10px;
+}
+
+.card-footer {
+    background-color: #f0f0f0;
+    padding: 5px;
+    border-top: 1px solid #ccc;
+}
+
+.card-footer a {
+    margin-right: 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+.card-footer a:hover {
+    color: #555;
+}

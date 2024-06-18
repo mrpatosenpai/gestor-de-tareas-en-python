@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tareas del Usuario</title>
+</head>
+<body>
+    <h1>Tareas Registradas por Estado</h1>
+
+    {% if imagen_path %}
+    <img src="{{ url_for('static', filename='img2/grafico_usuario_' + usuario + '.png') }}" alt="Gráfico de Barras">
+    {% else %}
+    <p>No se encontró la imagen.</p>
+    {% endif %}
+</body>
+</html>

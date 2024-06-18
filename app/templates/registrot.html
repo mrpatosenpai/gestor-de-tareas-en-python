@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="{{url_for('static', filename ='css/Style.css')}}">
+</head>
+<body>
+    <div>
+        <div>
+            {% if 'usuario' in session %}
+            <p id="bienvenida">Bienvenido, {{ session ['usuario']}} - rol: {{ session['rol']}}</p>
+            {% endif %}
+        </div>
+    </div>
+    <nav>
+        <ul class="button-list">
+            <li><a href="/registrouser">Registrar Usuario</a></li>
+            <li><a href="/registrot">Registrar Tarea</a></li>
+            <li><a href="/salir">Cerrar Sesión</a></li>
+        </ul>
+        <h1>Buscar tarea</h1>
+        <form action="/buscar_tarea" method="POST">
+            <div>
+                <input type="text" class="form-control" name="busqueda" id="busqueda" placeholder="Buscar tarea">
+            </div>
+            <div >
+                <button type="submit" class="buton-buscar">Buscar</button>
+            </div>
+        </form>
+        <h1>Buscar usuario</h1>
+        <form action="/buscar_usuario" method="POST">
+            <div>
+                <input type="text" class="form-control" name="busquedau" id="busquedau" placeholder="Buscar usuario">
+            </div>
+            <div >
+                <button type="submit" class="buton-buscar">Buscar</button>
+            </div>
+        </form>
+    </nav>
+
+
+
+   
+    <h1>Formulario de Gestión de Tareas</h1>
+
+    <form action="/registrot" method="POST">
+        <!-- Nombre de la tarea -->
+        <div>
+            <label for="nombre">Nombre de la tarea:</label>
+            <input type="text" id="nombre" name="nombre" required>
+        </div>
+
+        <!-- Fecha de inicio -->
+        <div>
+            <label for="fechainicio">Fecha de inicio:</label>
+            <input type="date" id="fechainicio" name="fechainicio" required>
+        </div>
+
+        <!-- Fecha de fin -->
+        <div>
+            <label for="fechafinal">Fecha de fin:</label>
+            <input type="date" id="fechafinal" name="fechafinal" required>
+        </div>
+
+        <!-- Estado de la tarea -->
+        <div>
+            <label for="estado">Estado:</label>
+            <select id="estado" name="estado" required>
+                <option value="pendiente">Pendiente</option>
+                <option value="en_progreso">En progreso</option>
+                <option value="completada">Completada</option>
+            </select>
+        </div>
+
+        <!-- Botón de envío -->
+        <div>
+            <button type="submit">Enviar</button>
+        </div>
+    </form>
+    <a href="/lista">USUARIOS REGISTRADOS</a>
+    <table class="user-table">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Email</th>
+                <th>Usuario</th>
+                <th>Rol</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for usuarios in usuarios %}
+            <tr>
+                <td>{{ usuarios[0] }}</td>
+                <td>{{ usuarios[1] }}</td>
+                <td>{{ usuarios[2] }}</td>
+                <td>{{ usuarios[3] }}</td>
+                <td>{{ usuarios[4] }}</td>
+                <td>{{ usuarios[6] }}</td>
+                <td class="acciones">
+                <a href="{{url_for('eliminarusuario',id=usuarios[0])}}">Eliminar</a>
+                <a href="{{url_for('editarusuario',id=usuarios[0])}}">Editar</a>
+                </td> 
+                
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="/listaT">TAREAS REGISTRADAS</a>
+    <table class="user-table">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>Nombre</th>
+                <th>Fecha inicio</th>
+                <th>Fecha final</th>
+                <th>Estado</th>
+                <th>Id usuario</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for tareas in tareas %}
+            <tr>
+                <td>{{ tareas[0] }}</td>
+                <td>{{ tareas[1] }}</td>
+                <td>{{ tareas[2] }}</td>
+                <td>{{ tareas[3] }}</td>
+                <td>{{ tareas[4] }}</td>
+                <td>{{ tareas[5] }}</td>
+                <td class="acciones">
+                    <a href="{{url_for('eliminart',id=tareas[0])}}">Eliminar</a>
+                    <a href="{{url_for('editart',id=tareas[0])}}">Editar</a>
+                    </td> 
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <form action="/tabla_tareas" method="post">
+        <button type="submit">Mostrar Tabla</button>
+    </form>
+</body>
+</html>

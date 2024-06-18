@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado</title>
+    <link rel="stylesheet" href="{{url_for('static', filename ='css/Style.css')}}">
+</head>
+<body>
+    <h1>Resultado de la busqueda "{{ busquedau}}"</h1>
+
+    <div>
+        {%for usuarios in usuarios %}
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-tittle">Codigo del usuario: {{ usuarios['id_user'] }}</h5>
+            </div>
+            <div class="card-body">
+                <p class="card-text"><strong>Nombre del usuario: </strong> {{ usuarios['nombre_user']}}</p>
+                <p class="card-text"><strong>Apellido del usuario: </strong>{{ usuarios['apellido_user']}}</p>
+                <p class="card-text"><strong>Email del usuario: </strong>{{ usuarios['email_user']}}</p>
+                <p class="card-text"><strong>Nombre de usuario: </strong>{{ usuarios['usuario_user']}}</p>
+                <p class="card-text"><strong>Rol del usuario: </strong>{{ usuarios['rol_user']}}</p>
+            </div>
+            <div class="card-footer">
+                <a href="{{url_for('eliminarusuario',id=usuarios.id_user)}}">Eliminar</a>
+                <a href="{{url_for('editarusuario',id=usuarios.id_user)}}">Editar</a>
+            </div>
+        </div>
+
+        {% endfor %}
+    </div>
+</body>
+</html>
